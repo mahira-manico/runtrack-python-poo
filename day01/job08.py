@@ -16,13 +16,13 @@ class Circle:
     def area(self): #calcul area of circle
         return math.pi*(self.radius**2)
         
-    def diameter(self): #calcul diameter
+    def diameter(self): #calcul diameter of circle
         return 2*self.radius
 
 circle1=Circle(4) #Instance creation
 circle1.displayInfo() #method call to display informations
 circle2=Circle(7)
 circle2.displayInfo()
-circle2.changeRadius(10) #method to change radius without calling Circle 
+circle2.changeRadius(10) #method to change radius without calling Circle
 circle2.displayInfo()
         

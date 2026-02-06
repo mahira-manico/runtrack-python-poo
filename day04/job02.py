@@ -1,58 +1,44 @@
 class Person:
     def __init__(self):
         self.age=14
-    
     def display_age(self):
-        return self.age   
-    
+        return self.age # Returns the integer
     def hello(self):
-        hello=print("Hello")
-        return hello
-    
+        print("Hello") # Just print, no need to return None
     def modifyAge(self,new_age):
         self.age=int(new_age)
 
 class Student(Person):
-
     def goingToClass(self):
-        print("i'm going to class")
-    
-    def displayAge(self,person_object):
-        print(f"i'am {person_object.display_age()} years old.")
-    
-    def displayHello(self,person_object):
-        return person_object.hello()
-    
+        print("I'm going to class")
+    def displayAge(self):
+        # We use self.display_age() inherited from Person
+        print(f"I am {self.display_age()} years old.")
+    def displayHello(self):
+        self.hello() # Inherited method
 
 class Professor:
     def __init__(self,subjectTaught):
         self.__subjectTaught=subjectTaught
-    
-    def get_age(self, person_object):
-        print(f"i'am {person_object.display_age()} years old.")
-    
-    def get_hello(seld, person_object):
-        return person_object.hello()
-
-    
-    def get_subjectTaught(self):
-        return self.__subjectTaught
-    
+    def get_age(self,person_object):
+        # Using reference to another object
+        print(f"I am {person_object.display_age()} years old.")
+    def get_hello(self,person_object):
+        person_object.hello()
     def Teach(self):
         print("Class will start soon")
 
+#test
 person1=Person()
-person1.display_age()
 student1=Student()
-student1.displayAge(person1)
-student1.displayHello(person1)
-student1.goingToClass()
-person1.modifyAge(15)
-student1.displayAge(person1)
-prof=Person()
-prof.modifyAge(40)
-prof1=Professor("Algebra")
-prof1.get_age(prof)
-prof1.get_hello(prof)
-prof1.Teach()
+student1.displayAge() # Output: 14
+student1.displayHello() # Output: Hello
 
+student1.modifyAge(20) # We modify student age
+student1.displayAge()
+
+prof_person=Person() # The person object for the professor
+prof_person.modifyAge(40)
+prof1=Professor("Algebra")
+prof1.get_age(prof_person) # Output: 40 
+prof1.get_hello(prof_person)

@@ -20,6 +20,8 @@ class Student(Person):
 class Professor:
     def __init__(self,subjectTaught):
         self.__subjectTaught=subjectTaught
+    def get_subject(self):
+        return self.__subjectTaught
     def get_age(self,person_object):
         # Using reference to another object
         print(f"I am {person_object.display_age()} years old.")

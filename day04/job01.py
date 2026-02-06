@@ -6,7 +6,7 @@ class Person:
         return self.age   
     
     def hello(self):
-        return "Hello"
+        print("Hello")
     
     def modifyAge(self,new_age):
         self.age=int(new_age)
@@ -14,10 +14,10 @@ class Person:
 class Student(Person):
 
     def goingToClass(self):
-        return "i'm going to class"
+        print("i'm going to class")
     
-    def displayAge(self,person_object):
-        print(f"i'am {person_object.display_age()} years old.")
+    def displayAge(self):
+        print(f"i'am {self.display_age()} years old.")
 
 class Professor:
     def __init__(self,subjectTaught):
@@ -32,7 +32,7 @@ class Professor:
 person1=Person()
 person1.display_age()
 student1=Student()
-student1.displayAge(person1)
+student1.displayAge()
 
 
 

@@ -4,7 +4,7 @@ class Person:
     def display_age(self):
         return self.age # Returns the integer
     def hello(self):
-        print("Hello") # Just print, no need to return None
+        print("Hello") #Display hello
     def modifyAge(self,new_age):
         self.age=int(new_age)
 
